@@ -6,7 +6,8 @@ Provides RESTful API for ArZeit
 API URLs
 --------
 All actions are performed as a user. Responses are JSON with the following structure:
-```javascript
+
+```json
 {
     "error": [true|false],
     "error_msg": "",
@@ -19,6 +20,7 @@ All actions are performed as a user. Responses are JSON with the following struc
 List of URLs
 ------------
 
+```
 timers/
 timers/{id}/
 timers/{id}/start/
@@ -41,6 +43,7 @@ categories/{id}/totals/year/{year}/
 categories/{id}/totals/month/{year}/{month}/
 categories/{id}/totals/week/{year}/{week}/
 categories/{id}/totals/day/{year}/{month}/{day}/
+```
 
 URL Table (to be completed...)
 ------------------------------
