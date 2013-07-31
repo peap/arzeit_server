@@ -5,6 +5,9 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
     # Examples:
     # url(r'^$', 'arzeit_server.views.home', name='home'),
     # url(r'^arzeit_server/', include('arzeit_server.foo.urls')),
