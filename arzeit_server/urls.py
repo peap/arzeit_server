@@ -2,9 +2,9 @@ from django.conf.urls import patterns, include, url
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, routers
 
-from categories.models import Category
-from tags.models import Tag
-from timers.models import Timer, Interval
+import categories.views
+import tags.views
+import timers.views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -16,22 +16,13 @@ class UserViewSet(viewsets.ModelViewSet):
 class GroupViewSet(viewsets.ModelViewSet):
     model = Group
 
-class CategoryViewSet(viewsets.ModelViewSet):
-    model = Category
-class TagViewSet(viewsets.ModelViewSet):
-    model = Tag
-class TimerViewSet(viewsets.ModelViewSet):
-    model = Timer
-class IntervalViewSet(viewsets.ModelViewSet):
-    model = Interval
-
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
-router.register(r'categories', CategoryViewSet)
-router.register(r'tags', TagViewSet)
-router.register(r'timers', TimerViewSet)
-router.register(r'intervals', IntervalViewSet)
+router.register(r'categories', categories.views.CategoryViewSet)
+router.register(r'tags', tags.views.TagViewSet)
+router.register(r'timers', timers.views.TimerViewSet)
+router.register(r'intervals', timers.views.IntervalViewSet)
 
 urlpatterns = patterns('',
 
