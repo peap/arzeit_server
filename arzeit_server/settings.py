@@ -147,6 +147,12 @@ LOGGING = {
     }
 }
 
+USE_X_FORWARDED_HOST = True
+
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+]
+
 REST_FRAMEWORK = {
     # Use hyperlinked styles by default.
     # Only used if the 'serializer_class' attribute is not set on a view.
